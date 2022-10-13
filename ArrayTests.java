@@ -33,4 +33,21 @@ public class ArrayTests {
   }
 
 
+
+
+
+
+  @Test
+  public void testAverage(){
+    double[] input = {2,5,5,5,5,5};
+    double output = ArrayExamples.averageWithoutLowest(input);
+    assertEquals(5, output, 0.00000001);
+  }
+
+@Test
+  public void testAverage2(){
+    double[] input = {5,5,5,5,5,5};
+    double output = ArrayExamples.averageWithoutLowest(input);
+    assertEquals(5, output, 0.00000001);
+  }
 }
