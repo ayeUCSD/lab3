@@ -3,13 +3,10 @@ import java.io.File;
 import java.util.*;
 import org.junit.*;
 
-
-
-
 public class FileTests {
 
   @Test
-  public void testGetFiles(){
+  public void testGetFiles() {
     File start = new File("testFileFolder");
     List<File> output = null;
     try {
@@ -17,10 +14,10 @@ public class FileTests {
     } catch (Exception e) {
       fail("Threw an Exception");
     }
-      
-    assertEquals("testFileFolder,testFileFolder/testFile.txt", Arrays.toString(output.toArray()));
-
-
+    String expected = "[testFileFolder, testFileFolder\\testFile.txt, testFileFolder\\testSubFolder\\testSubFile.txt]";
+    System.out.println("Expected: " + expected);
+    System.out.println("Result: " + ((ArrayList)output).toString());
+    assertEquals(expected, ((ArrayList) output).toString());
 
   }
 
